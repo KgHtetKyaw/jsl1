@@ -1,0 +1,532 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    max-height: 700px;
+    background: url("https://images.unsplash.com/photo-1485579149621-3123dd979885?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+
+    position: relative;
+
+    /*transition: all 3s;*/
+}
+
+/*body.shownav{*/
+/*    transform: translateX(200px);*/
+/*}*/
+
+nav{
+    width: 200px;
+    height: 330px;
+    background: rgba(0,0,0,0.9);
+
+    border: 3px solid black;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    z-index: 2;
+
+    transform: translateX(-105%);
+}
+
+nav.shownav{
+    transform: translateX(0px);
+}
+
+nav img{
+    width: 120px;
+    max-height: 120px;
+    border: 2px dotted #fff;
+    border-radius: 50%;
+
+    margin: 20px 40px;
+
+    cursor: pointer;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+
+    transition: all 1s;
+}
+
+nav ul li{
+    list-style-type: none;
+    padding: 10px;
+    /*border-bottom: 2px solid rgba(0,0,0,0.2);*/
+
+    transform: scale(1);
+}
+
+/*nav ul li:nth-of-type(1){*/
+/*    border-top: 2px solid rgba(0,0,0,0.2);*/
+/*}*/
+
+nav ul li:hover{
+    transform: scale(1.3) translateX(20px);
+    cursor: pointer;
+}
+
+nav ul li:active{
+    transform: scale(1.3) translateX(20px);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+
+    /*cursor: pointer;*/
+}
+
+nav ul li a i{
+    margin-right: 10px;
+}
+
+header{
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 130%;
+
+    text-align: center;
+
+    position: relative;
+}
+
+header .menu-bar{
+    color: rebeccapurple;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    transform: translateX(0px);
+}
+
+header .menu-bar.shownav{
+    transform: translateX(205px);
+}
+
+header .menu-bar.active{
+    transform: translateX(210px);
+}
+
+header .login-btn{
+    color: rebeccapurple;
+    font-size: 15px;
+    padding: 5px 15px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    cursor: pointer;
+}
+
+header h2{
+    margin: 0;
+    padding: 10px 20px;
+}
+
+header p{
+    padding-bottom: 10px;
+}
+
+/*Audio Player*/
+.m-container{
+    width: 100%;
+    height: 100vh;
+    /*box-shadow: 10px 10px 10px black;*/
+
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+
+    margin-top: 100px;
+}
+
+.music{
+    width: 400px;
+    height: 340px;
+    background: url("https://365psd.com/images/home/060/3d-colorful-music-vector-background-3d-abstract-art-43399.jpg");
+    color: #fff;
+
+    border: 4px solid rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+
+.music h2{
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.img-container{
+    width: 200px;
+    height: 200px;
+
+    position: relative;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border: 5px solid rgba(0,0,0,0.8);
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+
+    position: absolute;
+    top: 0;
+    left: 100px;
+
+    animation-name: myrotate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    animation-play-state: paused;
+}
+
+.m-container.play .img-container img{
+    animation-play-state: running;
+}
+
+.img-container:before{
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: rebeccapurple;
+
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+
+    position: absolute;
+    top: 40%;
+    left: 180px;
+
+    z-index: 2;
+}
+
+@keyframes myrotate {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+       transform: rotate(1turn);
+    }
+}
+.music-container{
+    overflow: hidden;
+
+    position: relative;
+
+    /*z-index: 1;*/
+
+    transition: all 0.5s;
+}
+
+.music-container .title{
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+
+    margin-top: 10px;
+}
+
+.music-container h4{
+    font-size: 20px;
+
+    display: flex;
+    /*align-items: center;*/
+    line-height: 30px;
+
+    margin-top: -5px;
+    padding-left: 10px;
+
+    animation-name: mytranslate;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /*animation-direction: alternate;*/
+
+    animation-play-state: paused;
+}
+
+.m-container.play .music-container h4{
+    animation-play-state: running;
+}
+
+@keyframes mytranslate {
+    0%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(420px);
+    }
+}
+
+.music-btn{
+    width: 100%;
+    background-color: rgba(0,0,0,0.9);
+    box-shadow: 5px 5px 20px black;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px 0;
+}
+
+.action-btn{
+    font-size: 30px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+
+    text-shadow: 10px 10px 20px black;
+    /*border: 2px solid black;*/
+    /*border-radius: 5px;*/
+
+    padding: 5px 10px;
+    margin: 0 20px;
+
+    border: 0;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.action-btn-big{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.action-btn:active{
+    transform: scale(1.1);
+}
+
+.progress-loading-box{
+    width: 380px;
+    height: 160px;
+    background-color: transparent;
+
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 6px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 5px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: -1;
+
+    transform: translateY(-160px);
+
+    transition: all 0.5s;
+}
+
+.progress-loading-box.play{
+    transform: translateY(0px);
+
+    transition: all 0.5s;
+}
+
+.progress-loading-box .progress-loading{
+    width: 100%;
+    height: 96%;
+    /*background-color: red;*/
+}
+
+/*.progress-loading .progress1{*/
+/*    width: 34px;*/
+/*    height: 150px;*/
+/*    background-color: white;*/
+/*    border: 0;*/
+/*    border-radius: 3px;*/
+/*}*/
+
+/*.progress-loading .progress1{*/
+/*    position: absolute;*/
+/*    top: 4px;*/
+/*    left: 2px;*/
+/*}*/
+
+/*.progress-loading img{*/
+/*    width: 100%;*/
+/*    height: 300%;*/
+/*    background-position: top;*/
+
+/*    margin-top: -50px;*/
+/*}*/
+
+.progress-loading video{
+    width: 100%;
+    height: 100%;
+
+    margin-top: -10px;
+}
+
+.progress-container{
+    width: 100%;
+    height: 6px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    cursor: pointer;
+
+    transform: translateY(248px);
+}
+
+.progress{
+    width: 10%;
+    height: 100%;
+    background-color: orangered;
+    border-radius: 5px;
+}
+
+
+/*Sign Up*/
+.modal-container{
+    width: 250px;
+    height: 350px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+
+    border: 2px solid rgba(0,0,0,0.8);
+    border-radius: 5px;
+
+    position: absolute;
+    top: 50px;
+    right: 10px;
+
+    display: none;
+}
+
+.modal-container.showmodal{
+    display: block;
+}
+
+.closebtn{
+    background-color: #fff;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+
+    /*border: 4px solid rgba(0,0,0,0.8);*/
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+
+    padding: 4px 8px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    cursor: pointer;
+
+    transform: scale(1);
+}
+
+.closebtn:active{
+    transform: scale(1.1);
+}
+
+.modal-header{
+    width: 100%;
+    height: 50px;
+    background-color: rebeccapurple;
+
+    border: 4px solid rgba(0,0,0,0.8);
+    border-radius: 8px;
+
+    margin: 0;
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header h2{
+    text-shadow: 5px 5px 10px black;
+}
+
+.modal-content p{
+    width: 100%;
+    height: 36px;
+    background-color: rebeccapurple;
+
+    border: 4px solid rgba(0,0,0,0.8);
+    border-radius: 8px;
+
+    text-align: left;
+    text-shadow: 5px 5px 10px black;
+
+    padding-top: 5px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.modal-form{
+    width: 100%;
+    padding: 0 10px;
+
+    border: 4px solid rgba(0,0,0,0.8);
+    border-radius: 8px;
+}
+
+.modal-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form input{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.modal-form input:focus{
+    border: 0;
+}
+
+.modal-content .submitbtn{
+    width: 30%;
+    /*height: ;*/
+    margin-top: 5px;
+
+    cursor: pointer;
+}
+
+.modal-content .cancelbtn{
+    width: 30%;
+
+    position: absolute;
+    bottom: 11px;
+    left: 85px;
+
+    cursor: pointer;
+}
